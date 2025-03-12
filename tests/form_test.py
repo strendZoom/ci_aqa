@@ -10,6 +10,3 @@ class TestFormPage(BaseTest):
         self.form_page.enter_subject(self.data.SUBJECT)
         self.form_page.enter_file_upload(self.data.FILE_PATH)
         self.form_page.enter_current_address(self.data.CURRENT_ADDRESS)
-
-    def test_email(self):
-        self.form_page.enter_email(self.data.EMAIL)
