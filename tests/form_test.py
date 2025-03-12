@@ -1,7 +1,7 @@
-import pytest
+import time
+
 from base.base_test import BaseTest
 
-@pytest.mark.usefixtures("setup")
 class TestFormPage(BaseTest):
 
     def test_open_url(self):
@@ -13,6 +13,9 @@ class TestFormPage(BaseTest):
     def test_field_last_name(self):
         self.form_page.enter_last_name(self.data.LAST_NAME)
 
+    def test_gender_radio_button(self):
+        self.form_page.click_gender_radio_button()
+
     def test_field_email(self):
         self.form_page.enter_email(self.data.EMAIL)
 
@@ -22,8 +25,11 @@ class TestFormPage(BaseTest):
     def test_field_subject(self):
         self.form_page.enter_subject(self.data.SUBJECT)
 
-    def test_input_file(self):
+    def test_field_file_path(self):
         self.form_page.enter_file_upload(self.data.FILE_PATH)
+
+    def test_hobbies_radio_button(self):
+        self.form_page.click_hobbies_radio_button()
 
     def test_field_current_address(self):
         self.form_page.enter_current_address(self.data.CURRENT_ADDRESS)
