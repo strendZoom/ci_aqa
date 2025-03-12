@@ -5,6 +5,8 @@ from selenium.webdriver import Keys
 from random import randint
 from selenium.webdriver.support import expected_conditions as EC
 import logging
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
 logging.basicConfig(level=logging.INFO)
 
 class FormPage(BasePage):
@@ -59,5 +61,10 @@ class FormPage(BasePage):
     def click_hobbies_radio_button(self):
         self.wait.until(EC.element_to_be_clickable(self.HOBBIES)).click()
 
+    def scroll_page(self,el):
+        scroll_origin = ScrollOrigin.from_element(el)
+        ActionChains(self.driver).scroll_from_origin(scroll_origin, 0, 400).perform()
+
     def click_button_submit(self):
+        self.scroll_page(self.driver.find_element(*self.SUBJECT))
         self.wait.until(EC.element_to_be_clickable(self.SUBMIT)).click()
