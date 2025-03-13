@@ -1,6 +1,5 @@
 from base.base_test import BaseTest
-from fixtures.driver.conftest import driver
-
+from conftest import driver
 class TestFormPage(BaseTest):
 
     def test_open_url(self):

@@ -10,3 +10,5 @@ class Data:
     SUBJECT = os.getenv("SUBJECT")
     FILE_PATH = os.getenv("FILE_PATH")
     CURRENT_ADDRESS = os.getenv("CURRENT_ADDRESS")
+    OLD_USER_LOGIN = os.getenv("OLD_USER_LOGIN")
+    OLD_USER_PASSWORD = os.getenv("OLD_USER_PASSWORD")
