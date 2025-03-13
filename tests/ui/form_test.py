@@ -1,6 +1,5 @@
-import time
-
 from base.base_test import BaseTest
+from fixtures.driver.conftest import driver
 
 class TestFormPage(BaseTest):
 
